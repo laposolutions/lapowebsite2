@@ -1,0 +1,203 @@
+---
+layout: default
+---
+
+<div class="hbanner"   style="background-image: url(images/bg6.jpg);">
+ 
+</div>
+
+
+<section class="services">
+  <div class="row container-fluid">
+    <div class="container text-white col-md-7">
+
+      <!----------------------TABLE TOP STARTS HERE------------------------------------>
+        <h1>Data Camps/Boot Camps</h1>
+        <div class="my-5">
+            <button class="btn  btn-success" id="btnmsg2" onclick="window.location.href='contact.html' ">SEND US A MESSAGE</button>
+          
+          </div>
+      
+      
+    
+        <!-- Don't need jQuery for Tabletop, but using it for this example -->
+        <script type="text/javascript" src="plugins/handlebars.js"></script>
+        <script type="text/javascript" src="plugins/jquery.js"></script>
+        <script type="text/javascript" src="plugins/tabletop.js"></script>
+    
+    </div>
+
+    <div class="sm-mt-5 col-md-5">
+   <p class="text-lg text-secondary h4 px-0 py-3mx-0 fw-light ">
+    LAPO Solutions offers 6-months of extensive data training courses targeted to high school and college students to gain good data 
+    analysis skills. This is both online and in-person learning, where course training will be but not limited to Excel, Python, R, Power BI, 
+    and Tableau. Students participating in this program can expect to gain knowledge in data analysis tools to help them meet the modern
+     working environment and help businesses solve real-world problems. </p> </div>
+<hr>
+
+  <div class="row container-fluid p-md-5  mt-5 text-left" >
+    <h3 class="text-lg  h1 px-0 py-3mx-0 ">
+    Who is this service for?  </h3>
+
+    <p class="text-lg text-secondary h4 px-0 py-3mx-0 fw-light  ">
+     Are you a small business? Are you seeking help to push your products/ services into the market? Well, this service was custom made to help you do just that.   </p>
+  </div>
+
+
+  <div class="row container-fluid p-md-5  mt-5 text-left">
+    <h3 class="text-lg  h1 px-0 py-3mx-0 ">
+    What you should expect </h3>
+
+    <p class="text-lg text-secondary h4  py-3 mx-0 fw-light ">
+     Expect excellent services at the best prices in the market. Our team of experts are available 24/7 to offer cutting edge customer support whenever you need it .  </p>
+  </div>
+
+
+
+
+</section>
+
+<div class="row container-fluid bg-light  my-5    text-center">
+  <h2 class="text-center  mt-3  lapocolor2">Upcoming Boot Camps</h2>
+ {%include bcamps.html%}
+</div>
+
+<div class="container text-white col-md-12 text-center">
+  
+   
+  <div class="my-5">
+    <button class="btn  btn-primary btn-lg" id="btnmsg2" onclick="msg3()">SIGN UP</button>
+  
+  </div>
+
+
+  <div class="container bg-blue " style="max-width: 500px; display: none;" id="msg2" >
+   <!---------------------------------------------- <script src="https://sheetdb.io/s/f/himb7xeyc0gxd.js"></script>
+    ---------->
+    <form method="post" id="sheetdb-form2" class="row g-3 p-md-3 mt-3"  id="msgform2" action="https://sheetdb.io/api/v1/oc5ztomnzsa4m">
+      <button class="btn btn-sm  col-3 btn-secondary text-white float-right" id="btnrefr2" onclick="refr2()" style="display: none;">Close</button>
+      <script>
+        function msg2(){
+          document.getElementById("msg2").style.display = "block";
+          document.getElementById("btnmsg2").style.display = "none";
+          document.getElementById("btnrefr2").style.display = "block";
+          document.getElementById("sheetdb-form2").style.display = "block";
+        }
+      </script>
+  
+        <script>
+          function refr2(){
+            document.getElementById("btnmsg2").style.display = "block";
+          document.getElementById("sheetdb-form2").style.display = "none";
+          document.getElementById("btnrefr2").style.display = "none";
+  
+          }
+        </script>
+  <div class="me-1">
+    <label for="validationServerUsername" class="form-label h4 text-warning py-3 fw-light">Please send us a message</label>
+    <div class="input-group has-validation">
+     <input type="text" class="form-control " placeholder="Name" id="validationServerUsername" 
+      name="data[name]" aria-describedby="inputGroupPrepend3" required>
+           </div>
+  </div>
+
+
+  <div class="me-1">
+      <div class="input-group has-validation">
+     <input type="text" class="form-control " placeholder="Phone" id="validationServerUsername" 
+      name="data[phone]" aria-describedby="inputGroupPrepend3" required>
+           </div>
+  </div>
+
+  
+  <div class="me-1">
+    <div class="input-group has-validation">
+   <input type="text" class="form-control " placeholder="Email" id="validationServerUsername" 
+    name="data[email]" aria-describedby="inputGroupPrepend3" required>
+         </div>
+</div>
+
+<div class="me-1">
+  <div class="input-group has-validation">
+ <input type="hidden" class="form-control " id="theDate"  placeholder="date" id="validationServerUsername" 
+  name="data[date]" aria-describedby="inputGroupPrepend3"   >
+       </div>
+</div>
+
+<script>
+var date = new Date();
+
+var day = date.getDate();
+var month = date.getMonth() + 1;
+var year = date.getFullYear();
+
+if (month < 10) month = "0" + month;
+if (day < 10) day = "0" + day;
+
+var today = year + "-" + month + "-" + day ;       
+document.getElementById("theDate").value = today;
+</script>
+
+  <div class="me-1">
+       <div class="input-group has-validation">
+                <textarea class="form-control" name="data[message]" aria-label="textarea" placeholder="message"></textarea>
+           </div>
+  </div>
+  
+  <div class="col-9 text-center">
+    <button class="btn btn-primary" type="submit">Send message</button>
+  </div>
+</form>
+
+<script>
+var form = document.getElementById('sheetdb-form2');
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  fetch(form.action, {
+      method : "POST",
+      body: new FormData(document.getElementById("sheetdb-form2")),
+  }).then(
+      response => response.json()
+  ).then((html) => {
+    // you can put any JS code here
+    
+    window.location.href='sent.html';
+  });
+});
+</script>
+  </div>
+
+
+ 
+  <!-- Don't need jQuery for Tabletop, but using it for this example -->
+  <script type="text/javascript" src="plugins/handlebars.js"></script>
+  <script type="text/javascript" src="plugins/jquery.js"></script>
+  <script type="text/javascript" src="plugins/tabletop.js"></script>
+
+</div>
+
+
+<div class="container-fluid row py-5 ">
+  <h2 class="text-center lapocolor2">Gallery</h2>
+  <div class="col-md-4">
+    <img src="images/tech/computer2.jpg" class="img-fluid mt-3" alt="">
+  </div>
+  <div class="col-md-4">
+    <img src="images/tech/computer3.jpg" class="img-fluid mt-3" alt="">
+  </div>
+  <div class="col-md-4">
+    <img src="images/tech/computer.jpg" class="img-fluid mt-3" alt="">
+  </div>
+  <div class="col-md-4">
+    <img src="images/tech/camp2.jpg" class="img-fluid mt-3" alt="">
+  </div>
+
+  <div class="col-md-4">
+    <img src="images/tech/coder.jpg" class="img-fluid mt-3" alt="">
+  </div>
+  <div class="col-md-4">
+    <img src="images/tech/robot.jpg" class="img-fluid mt-3" alt="">
+  </div>
+
+</div>
+

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+      <html class="no-js" lang="zxx">
+        <head>
+          <meta charset="utf-8">
+          <meta http-equiv="x-ua-compatible" content="ie=edge">
+          <title>Lapo Solutions Ltd</title>
+          <meta name="description" content="Big data analysis experts in Uganda, Data bootcamps, Business Intelligence Technologies">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+      
+          <link rel="apple-touch-icon" href="apple-touch-icon.png">
+          <link rel="stylesheet" href="{{site.baseurl}}/plugins/bootstrap/bootstrap.min.css">
+          <!-- ThemeFisher Icon -->
+          <link rel="stylesheet" href="{{site.baseurl}}/plugins/fonts/themefisher-fonts.css">
+          <!-- Light Box -->
+          <link rel="stylesheet" href="{{site.baseurl}}/plugins/magnific-popup/magnific-popup.css">
+          <!-- animation css -->
+          <link rel="stylesheet" href="{{site.baseurl}}/plugins/animate/animate.css">
+          <!-- slick slider -->
+          <link rel="stylesheet" href="{{site.baseurl}}/plugins/slick/slick.css">
+          <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>  
+          <script type="text/javascript" language="javascript" src="https://rawgit.com/Microsoft/PowerBI-JavaScript/master/dist/powerbi.min.js"></script>
+          <!-- Revolution Slider -->
+          <link rel="stylesheet" href="{{site.baseurl}}/css/style.css">
+          <link rel="stylesheet" href="{{site.baseurl}}/css/style2.css">
+          <link rel="stylesheet" href="{{site.baseurl}}/css/carousel.css">
+      
+          <style>
+            /* Always set the map height explicitly to define the size of the div
+             * element that contains the map. */
+            #map_canvas {
+              height: 100%;
+            }
+            /* Optional: Makes the sample page fill the window. */
+          </style>
+          <script src="{{site.baseurl}}/plugins/modernizr.min.js"></script>
+        </head>
+        <body class="bg-white m-0 p-0">
+          <header>{%include nav.html navclass='navtop'%}</header>
+      
+          <div class="container-fluid">
+        
+      {{content}}
+    </div>
+
+    {%include footer.html %}
+  </body>
+  <script>  
+    $(document).ready(function () {  
+        var getEmbedToken = "ADD Your Copied URL";  
+  
+        $.ajax({  
+            url: getEmbedToken,  
+            jsonpCallback: 'callback',  
+            contentType: 'application/javascript',  
+            dataType: "jsonp",  
+            success: function (json) {  
+  
+                var models = window['powerbi-client'].models;  
+  
+                var embedConfiguration = {  
+                    type: 'report',  
+                    id: json.ReportId,  
+                    embedUrl: json.EmbedUrl,  
+                    tokenType: models.TokenType.Embed,  
+                    accessToken: json.EmbedToken  
+                };  
+  
+                var $reportContainer = $('#reportContainer');  
+                var report = powerbi.embed($reportContainer.get(0), embedConfiguration);  
+  
+  
+            },  
+            error: function () {  
+                alert("Error");  
+            }  
+        });  
+  
+    });  
+</script> 
+
+</html>
